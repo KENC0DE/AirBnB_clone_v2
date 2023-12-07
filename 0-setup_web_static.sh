@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 # Web static Deployment automation.
 
-if [ ! dpkg -s nginx &> /dev/null ]
-then
-        sudo apt-get update -y
-        sudo upt-get install nginx -y
-fi
 
-sudo mkdir -p /data/web_static/releases/test/
-sudo mkdir -p /data/web_static/shared/
-sudo echo "<!DOCTYPE html>
-<html>
+sudo apt update -y
+sudo apt install nginx -y
+
+sudo mkdir -p /data/web_static/releases/test
+sudo mkdir -p /data/web_static/shared
+echo "<html>
         <head>
                 <title>Faker</title>
         </head>
