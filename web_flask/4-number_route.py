@@ -32,7 +32,7 @@ def about_python(text='is cool'):
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
-def is_number(n):
+def is_number(n=None):
     return f'{n} is integer'
 
 
