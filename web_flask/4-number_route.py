@@ -31,13 +31,9 @@ def about_python(text='is cool'):
     return 'Python {}'.format(text.replace('_', ' '))
 
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def is_number(n):
-    try:
-        num = int(n)
-        return f'{n} is a number'
-    except Exception:
-        pass
+    return f'{n} is integer'
 
 
 if __name__ == '__main__':
