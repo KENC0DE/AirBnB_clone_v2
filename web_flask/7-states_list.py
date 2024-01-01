@@ -9,16 +9,15 @@ from models import storage
 app = Flask(__name__)
 
 
-@app.route('/cities_by_states')
+@app.route('/states_list')
 def states_list():
     """Render template with states
     """
-    path = '8-cities_by_states.html'
+    path = '7-states_list.html'
     states = storage.all(State)
-
     # sort State object alphabetically by name
-    # sorted_states = sorted(states.values(), key=lambda state: state.name)
-    return render_template(path, states=states)
+    sorted_states = sorted(states.values(), key=lambda state: state.name)
+    return render_template(path, sorted_states=sorted_states)
 
 
 @app.teardown_appcontext
